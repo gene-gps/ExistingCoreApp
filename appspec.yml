@@ -2,10 +2,10 @@ version: 0.0
 os: linux
 files:
   - source: PipelineCoreApp/build_output
-    destination: /home/ubuntu/aspnetcoreapp
+    destination: /home/ubuntu/aspnetcoreservice
   - source: scripts/virtualhost.conf
-    destination: /home/ubuntu/aspnetcoreapp
-  - source: scripts/kestrel-aspnetcoreapp.service
+    destination: /home/ubuntu/aspnetcoreservice
+  - source: scripts/kestrel-aspnetcoreservice.service
     destination: /etc/systemd/system
 hooks:
   ApplicationStop:
