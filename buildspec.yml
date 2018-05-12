@@ -4,16 +4,13 @@ phases:
     commands:
       - echo Restore started on `date`
       - pip install --upgrade awscli
-      - dotnet restore AspNetCoreWebApplication/AspNetCoreWebApplication.csproj
-      - dotnet restore AspNetCoreWebApplicationTest/AspNetCoreWebApplicationTest.csproj
+      - dotnet restore PipelineCoreApp/PipelineCoreApp.csproj
   build:
     commands:
       - echo Build started on `date`
-      - dotnet publish -c release -o ./build_output AspNetCoreWebApplication/AspNetCoreWebApplication.csproj
-      - dotnet publish -c release -o ./test_output AspNetCoreWebApplicationTest/AspNetCoreWebApplicationTest.csproj
-      - dotnet vstest AspNetCoreWebApplicationTest/test_output/AspNetCoreWebApplicationTest.dll
+      - dotnet publish -c release -o ./build_output PipelineCoreApp/PipelineCoreApp.csproj
 artifacts:
   files:
-    - AspNetCoreWebApplication/build_output/**/*
+    - PipelineCoreApp/build_output/**/*
     - scripts/**/*
     - appspec.yml
